@@ -34,7 +34,7 @@ function initSmoothScroll() {
     });
 }
 
-// Валидация и отправка формы в Telegram
+// Валидация формы
 function initFormValidation() {
     const form = document.getElementById('contactForm');
     if (!form) return;
@@ -51,9 +51,23 @@ function initFormValidation() {
             };
             
             try {
-                await sendToTelegram(data);
-                showNotification('Сообщение отправлено! Я свяжусь с вами в ближайшее время.', 'success');
-                form.reset();
+                // Отправляем на серверную функцию Netlify
+                const response = await fetch('/.netlify/functions/send-to-telegram', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showNotification('Сообщение отправлено! Я свяжусь с вами в ближайшее время.', 'success');
+                    form.reset();
+                } else {
+                    throw new Error(result.error || 'Ошибка отправки');
+                }
             } catch (error) {
                 showNotification('Ошибка отправки сообщения. Попробуйте позже.', 'error');
                 console.error('Ошибка отправки:', error);
@@ -138,32 +152,6 @@ function clearFieldError(field) {
     if (errorElement && errorElement.classList.contains('error-message')) {
         errorElement.remove();
     }
-}
-
-// Отправка в Telegram
-async function sendToTelegram(data) {
-    const botToken = '5311947535:AAF1PN4O2iU1mLfyuIaoIMeYsCix7AnxYKc'; // Замените на ваш токен бота
-    const chatId = '130208292'; // Замените на ваш chat ID
-    
-    const text = `📧 Новое сообщение с сайта:\n\n👤 Имя: ${data.name}\n📧 Email: ${data.email}\n💬 Сообщение: ${data.message}`;
-    
-    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: text,
-            parse_mode: 'HTML'
-        })
-    });
-    
-    if (!response.ok) {
-        throw new Error('Ошибка отправки в Telegram');
-    }
-    
-    return await response.json();
 }
 
 // Эффекты при скролле
@@ -277,17 +265,4 @@ function showNotification(message, type = 'success') {
             notification.remove();
         }, 300);
     }, 3000);
-}
-
-// Вспомогательные функции
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
 }
