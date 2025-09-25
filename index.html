@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Денис Горюнов - Веб-разработчик</title>
+  <meta name="description" content="Персональный сайт Дениса Горюнова - веб-разработчика, создателя сайтов и digital-специалиста">
+  
+  <!-- Подключаем Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Подключаем CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">Денис Горюнов</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Денис Горюнов</h1>
+      <p>Создаю сайты, программирую, занимаюсь SEO</p>
+      <a href="#projects" class="btn">Смотреть работы</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Обо мне</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="assets/images/denis-goryunov.jpg" alt="Денис Горюнов">
+        </div>
+        <div class="about-text">
+          <h2>Привет! Я Денис</h2>
+          <p>Я опытный веб-разработчик с доказанным успехом в создании digital-проектов. Мои навыки включают владение различными языками программирования и фреймворками, а также опыт работы с базами данных и другими релевантными технологиями.</p>
+          <p>Способен решать задачи различной сложности, комфортно работаю как самостоятельно, так и в команде. Люблю создавать продукты, которые решают реальные проблемы и приносят пользу людям.</p>
+          <a href="#contact" class="btn">Связаться со мной</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Мои проекты</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/images/project-psychology.jpg" alt="Центр психологической помощи">
+          </div>
+          <div class="project-content">
+            <h3>Центр психологической помощи</h3>
+            <p>Бесплатная психологическая помощь и поддержка</p>
+            <a href="https://dengor.ru/ehriba.ru/" class="btn" target="_blank">Посмотреть проект</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/images/project-charity.jpg" alt="Благотворительный фонд">
+          </div>
+          <div class="project-content">
+            <h3>Благотворительный фонд</h3>
+            <p>Поддержка благотворительных инициатив и осознанности</p>
+            <a href="https://dengor.ru/heartway.site/" class="btn" target="_blank">Посмотреть проект</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/images/project-realestate.jpg" alt="Агентство недвижимости">
+          </div>
+          <div class="project-content">
+            <h3>Агентство недвижимости</h3>
+            <p>Комплексные услуги по недвижимости и ипотеке</p>
+            <a href="http://xn--24-dlc2aywdh3h.xn--p1ai" class="btn" target="_blank">Посмотреть проект</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Свяжитесь со мной</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📧</span>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:sawerD@mail.com">sawerD@mail.com</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <span>📞</span>
+            <div>
+              <h3>Телефон</h3>
+              <p><a href="tel:+79883390517">+7 (988) 339-05-17</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <span>💬</span>
+            <div>
+              <h3>WhatsApp</h3>
+              <p><a href="https://wa.me/79883390517">+7 (988) 339-05-17</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <span>✈️</span>
+            <div>
+              <h3>Telegram</h3>
+              <p><a href="https://t.me/dengorru">@dengorru</a></p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn">Отправить сообщение</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2024 Денис Горюнов. Все права защищены.</p>
+        <div class="social-links">
+          <a href="https://t.me/dengorru" target="_blank">Telegram</a>
+          <a href="https://wa.me/79883390517" target="_blank">WhatsApp</a>
+          <a href="mailto:sawerD@mail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Подключаем JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
