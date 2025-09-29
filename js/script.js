@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initMobileNavigation();
     initAnimations();
+    initFloatingButtons(); // Добавляем плавающие кнопки
 });
 
 // Плавная прокрутка
@@ -177,6 +178,9 @@ function initScrollEffects() {
             header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
         }
         
+        // Показываем/скрываем кнопку "Наверх"
+        toggleBackToTopButton();
+        
         animateOnScroll();
     });
 }
@@ -243,6 +247,75 @@ function initAnimations() {
     setTimeout(() => {
         animateOnScroll();
     }, 100);
+}
+
+// Плавающие кнопки
+function initFloatingButtons() {
+    // Создаем кнопку "Наверх"
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.id = 'backToTop';
+    backToTopBtn.className = 'floating-btn back-to-top';
+    backToTopBtn.innerHTML = '↑';
+    backToTopBtn.title = 'Наверх';
+    backToTopBtn.setAttribute('aria-label', 'Наверх');
+    
+    // Создаем плавающую кнопку "Связаться"
+    const contactBtn = document.createElement('button');
+    contactBtn.id = 'floatingContact';
+    contactBtn.className = 'floating-btn contact-btn';
+    contactBtn.innerHTML = '💬';
+    contactBtn.title = 'Связаться со мной';
+    contactBtn.setAttribute('aria-label', 'Связаться со мной');
+    
+    // Добавляем кнопки в body
+    document.body.appendChild(backToTopBtn);
+    document.body.appendChild(contactBtn);
+    
+    // События для кнопок
+    backToTopBtn.addEventListener('click', scrollToTop);
+    contactBtn.addEventListener('click', scrollToContact);
+    
+    // Изначально скрываем кнопку "Наверх"
+    backToTopBtn.style.opacity = '0';
+    backToTopBtn.style.visibility = 'hidden';
+}
+
+// Прокрутка наверх
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Прокрутка к контактам
+function scrollToContact() {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = contactSection.offsetTop - headerHeight;
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Показать/скрыть кнопку "Наверх"
+function toggleBackToTopButton() {
+    const backToTopBtn = document.getElementById('backToTop');
+    if (!backToTopBtn) return;
+    
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > 300) {
+        backToTopBtn.style.opacity = '1';
+        backToTopBtn.style.visibility = 'visible';
+    } else {
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.visibility = 'hidden';
+    }
 }
 
 // Уведомления

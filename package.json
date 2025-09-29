@@ -1,7 +1,7 @@
 {
   "name": "denis-goryunov-site",
   "version": "1.0.0",
-  "description": "Personal website with Telegram integration",
+  "description": "Personal website with floating buttons",
   "dependencies": {
     "node-fetch": "^2.6.7"
   },
