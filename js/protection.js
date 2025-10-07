@@ -1,6 +1,7 @@
-// Безопасная отправка формы через Netlify Function
 async function sendToTelegram(formData) {
     try {
+        console.log('Отправляем данные:', formData);
+        
         const response = await fetch('/.netlify/functions/telegram', {
             method: 'POST',
             headers: {
@@ -8,22 +9,14 @@ async function sendToTelegram(formData) {
             },
             body: JSON.stringify(formData)
         });
-
-        const result = await response.json();
         
-        if (!response.ok) {
-            throw new Error(result.error || 'Network error');
-        }
-
-        return { success: true, message: result.message };
+        const data = await response.json();
+        return data;
+        
     } catch (error) {
-        console.error('Form submission error:', error);
-        return { 
-            success: false, 
-            error: error.message || 'Произошла ошибка при отправке' 
-        };
+        console.error('Ошибка:', error);
+        return { error: error.message };
     }
 }
 
-// Экспорт функции
 window.sendToTelegram = sendToTelegram;
