@@ -56,6 +56,14 @@
             </ul>
         </div>
     </nav>
+	
+	<!-- РСЯ: Верхний рекламный блок -->
+	<div class="yandex-ad-container">
+		<div class="ad-label-rsy">Реклама</div>
+		<!-- Yandex.RTB R-A-11815532-1 -->
+		<div id="yandex_rtb_R-A-11815532-1"></div>
+		<script src="js/rsy-tracking.js"></script>
+	</div>
 
     <!-- Hero секция с маркетингом -->
     <section id="home" class="hero">
@@ -117,6 +125,23 @@
             </div>
         </div>
     </section>
+	
+	<!-- РСЯ: Рекламный блок после героя -->
+	<div class="ads-container">
+		<div class="ad-label">Реклама</div>
+		<!-- Yandex.RTB R-A-11815532-1 -->
+		<div id="yandex_rtb_R-A-11815532-2"></div>
+		<script>
+			window.yaContextCb = window.yaContextCb || [];
+			window.yaContextCb.push(() => {
+				Ya.Context.AdvManager.render({
+					blockId: "R-A-11815532-1",
+					renderTo: "yandex_rtb_R-A-11815532-2",
+					type: "feed"
+				});
+			});
+		</script>
+	</div>
 
     <!-- Примеры работ из реального GitHub -->
     <section id="showcase" class="marketing-section">
@@ -538,7 +563,7 @@
         </div>
 
         <div class="contact">
-            <!-- Защищённая форма без reCAPTCHA -->
+            <!-- Защищённая форма с отправкой в Telegram -->
             <form class="contact-form" id="protectedForm">
                 <!-- Скрытые поля для защиты -->
                 <input type="text" class="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
@@ -587,6 +612,10 @@
                 </button>
                 
                 <div class="form-status" id="formStatus"></div>
+                
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                    Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности и условиями обработки персональных данных
+                </p>
             </form>
 
             <!-- Контактная информация -->
@@ -605,7 +634,7 @@
                     <div>
                         <i class="fab fa-telegram" style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
                         <div style="color: var(--text-secondary);">Telegram</div>
-                        <a href="https://dengorru" style="color: var(--text-primary); text-decoration: none;">@denisgoryunof</a>
+                        <a href="https://t.me/dengorru" style="color: var(--text-primary); text-decoration: none;">@denisgoryunof</a>
                     </div>
                 </div>
             </div>
@@ -640,14 +669,14 @@
                 <ul class="footer-links">
                     <li><a href="tel:+79883390517">+7 (988) 339-05-17</a></li>
                     <li><a href="mailto:sawerGor@gmail.com">sawerGor@gmail.com</a></li>
-                    <li><a href="https://dengorru">Telegram</a></li>
+                    <li><a href="https://t.me/dengorru">Telegram</a></li>
                     <li><a href="#contact">Обратная связь</a></li>
                 </ul>
                 <div class="social-links">
                     <a href="https://github.com/DenisGoryunof" target="_blank" onclick="trackRSY('social_github')">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://dengorru" target="_blank" onclick="trackRSY('social_telegram')">
+                    <a href="https://t.me/dengorru" target="_blank" onclick="trackRSY('social_telegram')">
                         <i class="fab fa-telegram"></i>
                     </a>
                     <a href="mailto:sawerGor@gmail.com" onclick="trackRSY('social_email')">
@@ -669,7 +698,7 @@
         <div class="footer-bottom">
             <p>&copy; 2024 Денис Горюнов. Все права защищены.</p>
             <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                Все проекты реальные и доступны на GitHub. Сайт соответствует требованиям РСЯ.
+                Все проекты реальные и доступны на GitHub.
             </p>
         </div>
     </footer>
