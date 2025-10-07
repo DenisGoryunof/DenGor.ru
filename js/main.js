@@ -61,6 +61,8 @@ const ValidationUtils = {
     return found.length ? [`Обнаружены запрещённые слова: ${found.join(', ')}`] : [];
   },
 };
+
+
 // ---------- /ValidationUtils ----------
 
 // Теперь безопасно вешаем обработчик
