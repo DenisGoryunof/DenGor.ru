@@ -1,0 +1,46 @@
+/* РСЯ Стили */
+.yandex-ad-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.ad-label-rsy {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+}
+
+.ads-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.ad-label {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* Стили для feed-рекламы */
+#yandex_rtb_R-A-11815532-1,
+#yandex_rtb_R-A-11815532-2 {
+    margin: 1rem auto;
+    max-width: 100%;
+}
+
+/* Адаптивность рекламы */
+@media (max-width: 768px) {
+    .yandex-ad-container,
+    .ads-container {
+        padding: 0.5rem;
+        margin: 1rem 0;
+    }
+}
