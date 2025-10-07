@@ -1,8 +1,8 @@
 // Конфигурация для Netlify (безопасные данные)
 const TELEGRAM_CONFIG = {
-    botToken: window.atob('NTMxMTk0NzUzNTpBQUYxUE40TzJpVTFtTGZ5dUlvYUlNZVlzQ2l4N0FueFlLYw=='), // зашифрованный токен
-    chatId: '130208292', // ID для личных сообщений
-    botChatId: '5311947535' // ID чата с ботом
+  botToken: window.atob('NTMxMTk0NzUzNTpBQUYxUE40TzJpVTFtTGZ5dUlvYUlNZVlzQ2l4N0FueFlLYw=='), // оставь как есть
+  chatId: '130208292',      // ← свой id
+  botChatId: '130208292'    // ← можно тот же, если хочешь личку
 };
 
 // Безопасная отправка в Telegram
