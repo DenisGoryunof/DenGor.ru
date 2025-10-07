@@ -1,18 +1,19 @@
-// === Rate Limiter ===
+// main.js  (строка 1)
+'use strict';
+
+// ---------- Rate-Limiter ----------
 const rateLimiter = {
   maxAttempts: 3,
-  windowMs: 10 * 60 * 1000, // 10 минут
+  windowMs: 10 * 60 * 1000, // 10 мин
   storageKey: 'formRateLimit',
 
   getData() {
     const raw = localStorage.getItem(this.storageKey);
     return raw ? JSON.parse(raw) : { attempts: 0, firstAttempt: Date.now() };
   },
-
   setData(data) {
     localStorage.setItem(this.storageKey, JSON.stringify(data));
   },
-
   canSubmit() {
     const data = this.getData();
     const now = Date.now();
@@ -25,15 +26,11 @@ const rateLimiter = {
         timeRemaining: this.windowMs - timePassed,
       };
     }
-
     if (timePassed >= this.windowMs) {
-      // Сброс счётчика после окна
       this.setData({ attempts: 0, firstAttempt: now });
     }
-
     return { canSubmit: true };
   },
-
   recordAttempt() {
     const data = this.getData();
     data.attempts += 1;
@@ -41,11 +38,11 @@ const rateLimiter = {
     this.setData(data);
   },
 };
+// ---------- /Rate-Limiter ----------
 
-
-// Обработка формы с отправкой в Telegram
-document.getElementById('protectedForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+// Теперь безопасно вешаем обработчик
+document.getElementById('protectedForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
     
     const submitButton = document.getElementById('submitButton');
     const formStatus = document.getElementById('formStatus');
