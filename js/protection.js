@@ -1,6 +1,6 @@
 // Простая отправка формы
 async function sendToTelegram(formData) {
-  console.log('🔄 Отправка данных:', formData);
+  console.log('📤 Отправка данных в функцию:', formData);
   
   try {
     const response = await fetch('/.netlify/functions/telegram', {
