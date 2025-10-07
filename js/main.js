@@ -1,3 +1,48 @@
+// === Rate Limiter ===
+const rateLimiter = {
+  maxAttempts: 3,
+  windowMs: 10 * 60 * 1000, // 10 минут
+  storageKey: 'formRateLimit',
+
+  getData() {
+    const raw = localStorage.getItem(this.storageKey);
+    return raw ? JSON.parse(raw) : { attempts: 0, firstAttempt: Date.now() };
+  },
+
+  setData(data) {
+    localStorage.setItem(this.storageKey, JSON.stringify(data));
+  },
+
+  canSubmit() {
+    const data = this.getData();
+    const now = Date.now();
+    const timePassed = now - data.firstAttempt;
+
+    if (data.attempts >= this.maxAttempts && timePassed < this.windowMs) {
+      return {
+        canSubmit: false,
+        reason: 'rate_limit',
+        timeRemaining: this.windowMs - timePassed,
+      };
+    }
+
+    if (timePassed >= this.windowMs) {
+      // Сброс счётчика после окна
+      this.setData({ attempts: 0, firstAttempt: now });
+    }
+
+    return { canSubmit: true };
+  },
+
+  recordAttempt() {
+    const data = this.getData();
+    data.attempts += 1;
+    if (data.attempts === 1) data.firstAttempt = Date.now();
+    this.setData(data);
+  },
+};
+
+
 // Обработка формы с отправкой в Telegram
 document.getElementById('protectedForm').addEventListener('submit', async function(e) {
     e.preventDefault();
