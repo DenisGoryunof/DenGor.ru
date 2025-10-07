@@ -40,6 +40,29 @@ const rateLimiter = {
 };
 // ---------- /Rate-Limiter ----------
 
+
+// ---------- ValidationUtils ----------
+const ValidationUtils = {
+  validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  },
+  validatePhone(phone) {
+    return /^\+?\d{6,15}$/.test(phone.replace(/\s|-|\(|\)/g, ''));
+  },
+  validateTimeSpent(ms) {
+    const issues = [];
+    if (ms < 3000) issues.push('Форма заполнена слишком быстро');
+    if (ms > 300000) issues.push('Форма заполнена слишком долго');
+    return issues;
+  },
+  detectSpam(text) {
+    const spamWords = ['viagra', 'casino', 'crypto', 'http', 'www', '.ru', '.com'];
+    const found = spamWords.filter(w => text.toLowerCase().includes(w));
+    return found.length ? [`Обнаружены запрещённые слова: ${found.join(', ')}`] : [];
+  },
+};
+// ---------- /ValidationUtils ----------
+
 // Теперь безопасно вешаем обработчик
 document.getElementById('protectedForm').addEventListener('submit', async function (e) {
   e.preventDefault();
