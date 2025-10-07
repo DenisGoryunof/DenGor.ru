@@ -1,0 +1,643 @@
+/* Маркетинговые стили и компоненты */
+
+/* Преимущества */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.benefit-card {
+    background: var(--dark-card);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.benefit-card:hover::before {
+    left: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.benefit-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Примеры работ из реального GitHub */
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.showcase-item {
+    background: var(--dark-card);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.showcase-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 255, 136, 0.3);
+}
+
+.showcase-header {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-header.tech {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.showcase-header.business {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.showcase-header.bot {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.showcase-header.education {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.showcase-header.other {
+    background: linear-gradient(135deg, #00ff88, #0099ff);
+}
+
+.showcase-preview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.showcase-preview i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.showcase-content {
+    padding: 2rem;
+}
+
+.showcase-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.showcase-features {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.showcase-features li {
+    padding: 0.3rem 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.showcase-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.showcase-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(0, 255, 136, 0.1);
+    border-radius: 10px;
+}
+
+.showcase-stat {
+    text-align: center;
+}
+
+.showcase-stat-number {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.showcase-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.project-link {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-link.primary {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    font-weight: bold;
+}
+
+.project-link.secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.project-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+/* Процесс работы */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+}
+
+.process-step::after {
+    content: '→';
+    position: absolute;
+    right: -1rem;
+    top: 2rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient);
+    color: var(--dark-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.step-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.step-description {
+    color: var(--text-secondary);
+}
+
+/* Отзывы */
+.testimonials {
+    background: var(--dark-card);
+    border-radius: 30px;
+    padding: 4rem 2rem;
+    margin: 3rem 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial-card {
+    background: var(--dark-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    position: relative;
+}
+
+.testimonial-text {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-bg);
+    font-weight: bold;
+}
+
+.author-info h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.author-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.rating {
+    color: #ffa502;
+    margin-top: 0.5rem;
+}
+
+/* Цены и тарифы */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.pricing-card {
+    background: var(--dark-card);
+    border-radius: 25px;
+    padding: 2.5rem;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card.featured {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: 'ПОПУЛЯРНЫЙ';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 255, 136, 0.2);
+}
+
+.pricing-card.featured:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.plan-name {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.plan-price {
+    font-size: 3rem;
+    font-weight: bold;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.plan-period {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.plan-features {
+    list-style: none;
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.plan-features li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.plan-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* FAQ */
+.faq-list {
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.faq-item {
+    background: var(--dark-card);
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-question h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.faq-toggle {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Реальные технологии из GitHub */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-badge {
+    background: rgba(0, 255, 136, 0.2);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* GitHub статистика */
+.github-real-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.github-stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.github-stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: block;
+}
+
+.github-stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Реальные даты и факты */
+.project-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.project-tech {
+    background: rgba(0, 153, 255, 0.2);
+    color: var(--secondary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Реальные ссылки на GitHub */
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: var(--primary-color);
+}
+
+.github-link i {
+    font-size: 1.2rem;
+}
+
+/* Реальные метрики проектов */
+.project-metrics {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.project-metric {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.project-metric i {
+    color: var(--primary-color);
+}
+
+/* Реальные отзывы клиентов */
+.real-testimonial {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+.real-testimonial-author {
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.real-testimonial-role {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.real-testimonial-text {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Реальные кейсы с результатами */
+.case-results {
+    background: rgba(0, 255, 136, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.case-result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.case-result-metric {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.case-result-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Реальные технические детали */
+.tech-details {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.tech-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-detail:last-child {
+    border-bottom: none;
+}
+
+.tech-detail-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.tech-detail-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}

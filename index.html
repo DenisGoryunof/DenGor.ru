@@ -1,178 +1,683 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Денис Горюнов - Веб-разработчик</title>
-  <meta name="description" content="Персональный сайт Дениса Горюнова - веб-разработчика, создателя сайтов и digital-специалиста">
-  
-  <!-- Подключаем Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Подключаем CSS -->
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Денис Горюнов - Создание современных сайтов и чат-ботов | Веб-разработка под ключ</title>
+    <meta name="description" content="Профессиональная разработка сайтов, чат-ботов и веб-приложений. SEO-оптимизация, современный дизайн, техническая поддержка. Примеры работ из GitHub.">
+    <meta name="keywords" content="веб-разработка, создание сайтов, чат-боты, SEO, веб-приложения, фрилансер, программист, TypeScript, React, Python">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/marketing.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rsy-ads.css">
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+        
+        ym(88475619, 'init', {
+            webvisor:true, 
+            clickmap:true, 
+            accurateTrackBounce:true, 
+            trackLinks:true,
+            trackHash:true,
+            ecommerce:"dataLayer",
+            params: {
+                user_type: "potential_client",
+                page_category: "marketing_portfolio",
+                site_version: "rsy_compliant"
+            }
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/88475619" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- РСЯ Рекламный код -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-  <header>
-    <div class="container nav-container">
-      <a href="#" class="logo">Денис Горюнов</a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">Обо мне</a></li>
-          <li><a href="#projects">Проекты</a></li>
-          <li><a href="#contact">Контакты</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Меню">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">		
-      <h1>Денис Горюнов</h1>
-      <p>Создаю сайты, программирую, занимаюсь SEO</p>
-	  <img src="assets/images/hero.jpg" alt="github hero netfily">
-      <a href="#projects" class="btn">Смотреть работы</a>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">Обо мне</h2>
-      <div class="about-content">
-        <div class="about-image">
-          <img src="assets/images/denis-goryunov.jpg" alt="Денис Горюнов">
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">DG</div>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#showcase">Портфолио</a></li>
+                <li><a href="#pricing">Цены</a></li>
+                <li><a href="#contact" class="cta-nav">Заказать</a></li>
+            </ul>
         </div>
-        <div class="about-text">
-          <h2>Привет! Я Денис</h2>
-          <p>Я опытный веб-разработчик с доказанным успехом в создании digital-проектов. Мои навыки включают владение различными языками программирования и фреймворками, а также опыт работы с базами данных и другими релевантными технологиями.</p>
-          <p>Способен решать задачи различной сложности, комфортно работаю как самостоятельно, так и в команде. Люблю создавать продукты, которые решают реальные проблемы и приносят пользу людям.</p>
-          <a href="#contact" class="btn">Связаться со мной</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Мои проекты</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets/images/project-psychology.jpg" alt="Центр психологической помощи">
-          </div>
-          <div class="project-content">
-            <h3>Центр психологической помощи</h3>
-            <p>Бесплатная психологическая помощь и поддержка</p>
-            <a href="https://dengor.ru/ehriba.ru/" class="btn" target="_blank">Посмотреть проект</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets/images/project-charity.jpg" alt="Благотворительный фонд">
-          </div>
-          <div class="project-content">
-            <h3>Благотворительный фонд</h3>
-            <p>Поддержка благотворительных инициатив и осознанности</p>
-            <a href="https://dengor.ru/heartway.site/" class="btn" target="_blank">Посмотреть проект</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets/images/project-realestate.jpg" alt="Агентство недвижимости">
-          </div>
-          <div class="project-content">
-            <h3>Агентство недвижимости</h3>
-            <p>Комплексные услуги по недвижимости и ипотеке</p>
-            <a href="http://xn--24-dlc2aywdh3h.xn--p1ai" class="btn" target="_blank">Посмотреть проект</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Свяжитесь со мной</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-item">
-            <span>📧</span>
-            <div>
-              <h3>Email</h3>
-              <p><a href="mailto:sawerD@mail.com">sawerD@mail.com</a></p>
+    <!-- Hero секция с маркетингом -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Создаю сайты и чат-ботов, которые приносят деньги</h1>
+            <p class="hero-subtitle">Профессиональная веб-разработка с гарантией результата</p>
+            <p class="hero-description">
+                Разрабатываю современные сайты и интеллектуальных чат-ботов, которые автоматизируют ваш бизнес и увеличивают продажи. 
+                От идеи до запуска за 14 дней с технической поддержкой.
+            </p>
+            
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-rocket"></i>
+                    <div>Быстрый запуск</div>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>Гарантия результата</div>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-chart-line"></i>
+                    <div>Рост продаж</div>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-headset"></i>
+                    <div>Техподдержка 24/7</div>
+                </div>
             </div>
-          </div>
-          
-          <div class="contact-item">
-            <span>📞</span>
-            <div>
-              <h3>Телефон</h3>
-              <p><a href="tel:+79883390517">+7 (988) 339-05-17</a></p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button" onclick="trackRSY('hero_cta_click')">
+                    <i class="fas fa-calculator"></i>
+                    Рассчитать стоимость
+                </a>
+                <a href="#showcase" class="cta-button secondary" onclick="trackRSY('portfolio_view')">
+                    <i class="fas fa-eye"></i>
+                    Посмотреть примеры
+                </a>
             </div>
-          </div>
-          
-          <div class="contact-item">
-            <span>💬</span>
-            <div>
-              <h3>WhatsApp</h3>
-              <p><a href="https://wa.me/79883390517">+7 (988) 339-05-17</a></p>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-number">9</span>
+                    <div class="stat-label">Репозиториев GitHub</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <div class="stat-label">Языков программирования</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">7 лет</span>
+                    <div class="stat-label">Опыта разработки</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">14</span>
+                    <div class="stat-label">Дней до запуска</div>
+                </div>
             </div>
-          </div>
-          
-          <div class="contact-item">
-            <span>✈️</span>
-            <div>
-              <h3>Telegram</h3>
-              <p><a href="https://t.me/dengorru">@dengorru</a></p>
-            </div>
-          </div>
+        </div>
+    </section>
+
+    <!-- Примеры работ из реального GitHub -->
+    <section id="showcase" class="marketing-section">
+        <div class="section-header">
+            <h2 class="section-title">Мои реальные проекты с GitHub</h2>
+            <p class="section-subtitle">
+                Работы, которые уже приносят пользу клиентам и доступны для изучения
+            </p>
         </div>
 
-        <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <label for="name">Имя</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Сообщение</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          
-          <button type="submit" class="btn">Отправить сообщение</button>
-        </form>
-      </div>
-    </div>
-  </section>
+        <div class="showcase-grid">
+            <!-- Салон Эго - реальный проект -->
+            <div class="showcase-item">
+                <div class="showcase-header business">
+                    <div class="showcase-preview">
+                        <i class="fas fa-spa"></i>
+                        <h3>Салон Эго</h3>
+                        <p>Сайт + Telegram-бот</p>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Сайт и Telegram-бот для салона красоты</h3>
+                    <ul class="showcase-features">
+                        <li>Онлайн-запись на услуги 24/7 через Telegram-бота</li>
+                        <li>Современный дизайн с адаптивной версткой</li>
+                        <li>Интеграция с социальными сетями</li>
+                        <li>Система лояльности и скидок</li>
+                        <li>Админ-панель для управления контентом</li>
+                    </ul>
+                    <div class="showcase-stats">
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">TypeScript</div>
+                            <div class="showcase-stat-label">Язык</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">React</div>
+                            <div class="showcase-stat-label">Фреймворк</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">2025</div>
+                            <div class="showcase-stat-label">Год</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://github.com/DenisGoryunof/Ego" target="_blank" class="project-link primary" onclick="trackRSY('showcase_github', 'ego_salon')">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://ego-sev.netlify.app/reviews" target="_blank" class="project-link secondary" onclick="trackRSY('showcase_demo', 'ego_salon')">
+                            <i class="fas fa-external-link-alt"></i> Демо
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <p>© 2024 Денис Горюнов. Все права защищены.</p>
-        <div class="social-links">
-          <a href="https://t.me/dengorru" target="_blank">Telegram</a>
-          <a href="https://wa.me/79883390517" target="_blank">WhatsApp</a>
-          <a href="mailto:sawerD@mail.com">Email</a>
+            <!-- DenGor.ru - реальный проект -->
+            <div class="showcase-item">
+                <div class="showcase-header tech">
+                    <div class="showcase-preview">
+                        <i class="fas fa-globe"></i>
+                        <h3>DenGor.ru</h3>
+                        <p>Персональный сайт</p>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Персональный сайт-портфолио с современным дизайном</h3>
+                    <ul class="showcase-features">
+                        <li>Адаптивный дизайн для всех устройств</li>
+                        <li>Плавные анимации и эффекты</li>
+                        <li>Интеграция с GitHub API</li>
+                        <li>Система защиты от спама</li>
+                        <li>SEO-оптимизация и быстрая загрузка</li>
+                    </ul>
+                    <div class="showcase-stats">
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">JavaScript</div>
+                            <div class="showcase-stat-label">Язык</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">CSS3</div>
+                            <div class="showcase-stat-label">Стили</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">2025</div>
+                            <div class="showcase-stat-label">Год</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://github.com/DenisGoryunof/DenGor.ru" target="_blank" class="project-link primary" onclick="trackRSY('showcase_github', 'dengor')">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#home" class="project-link secondary" onclick="trackRSY('showcase_current', 'dengor')">
+                            <i class="fas fa-home"></i> Текущий сайт
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ego Chat Bot - реальный проект -->
+            <div class="showcase-item">
+                <div class="showcase-header bot">
+                    <div class="showcase-preview">
+                        <i class="fas fa-robot"></i>
+                        <h3>Ego Chat Bot</h3>
+                        <p>Telegram-бот</p>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Интеллектуальный чат-бот для салона красоты</h3>
+                    <ul class="showcase-features">
+                        <li>Прием заказов 24/7 без выходных</li>
+                        <li>Автоматические напоминания клиентам</li>
+                        <li>Обработка 90% типовых вопросов</li>
+                        <li>Интеграция с сайтом и CRM</li>
+                        <li>Сбор обратной связи и аналитика</li>
+                    </ul>
+                    <div class="showcase-stats">
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">Python</div>
+                            <div class="showcase-stat-label">Язык</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">aiogram</div>
+                            <div class="showcase-stat-label">Библиотека</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">2025</div>
+                            <div class="showcase-stat-label">Год</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://github.com/DenisGoryunof/ego-chat_bot" target="_blank" class="project-link primary" onclick="trackRSY('showcase_github', 'ego_bot')">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://t.me/ego_salon_bot" target="_blank" class="project-link secondary" onclick="trackRSY('showcase_bot_demo', 'ego_bot')">
+                            <i class="fab fa-telegram"></i> Бот
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ego Form - реальный проект -->
+            <div class="showcase-item">
+                <div class="showcase-header tech">
+                    <div class="showcase-preview">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>Ego Form</h3>
+                        <p>Форма для бота</p>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Интерактивная форма для Telegram-бота</h3>
+                    <ul class="showcase-features">
+                        <li>Сбор данных клиентов через веб-форму</li>
+                        <li>Валидация и проверка данных</li>
+                        <li>Интеграция с Telegram через API</li>
+                        <li>Адаптивный дизайн для мобильных</li>
+                        <li>Обработка и отправка в чат-бота</li>
+                    </ul>
+                    <div class="showcase-stats">
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">JavaScript</div>
+                            <div class="showcase-stat-label">Язык</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">Web API</div>
+                            <div class="showcase-stat-label">Интеграция</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">2025</div>
+                            <div class="showcase-stat-label">Год</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://github.com/DenisGoryunof/ego-form" target="_blank" class="project-link primary" onclick="trackRSY('showcase_github', 'ego_form')">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <button class="project-link secondary" onclick="trackRSY('showcase_form_demo', 'ego_form')">
+                            <i class="fas fa-eye"></i> Демо
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio v2 - реальный проект -->
+            <div class="showcase-item">
+                <div class="showcase-header tech">
+                    <div class="showcase-preview">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Portfolio v2</h3>
+                        <p>Новое портфолио</p>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Обновленное портфолио на TypeScript</h3>
+                    <ul class="showcase-features">
+                        <li>Современный стек TypeScript + React</li>
+                        <li>Компонентная архитектура</li>
+                        <li>Анимации и интерактивность</li>
+                        <li>Оптимизированная производительность</li>
+                        <li>Модульная структура кода</li>
+                    </ul>
+                    <div class="showcase-stats">
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">TypeScript</div>
+                            <div class="showcase-stat-label">Язык</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">React</div>
+                            <div class="showcase-stat-label">Фреймворк</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">2025</div>
+                            <div class="showcase-stat-label">Год</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://github.com/DenisGoryunof/portfolio" target="_blank" class="project-link primary" onclick="trackRSY('showcase_github', 'portfolio_v2')">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <button class="project-link secondary" onclick="trackRSY('showcase_portfolio_demo', 'portfolio_v2')">
+                            <i class="fas fa-external-link-alt"></i> Демо
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Baikal-deti - реальный проект -->
+            <div class="showcase-item">
+                <div class="showcase-header education">
+                    <div class="showcase-preview">
+                        <i class="fas fa-child"></i>
+                        <h3>Baikal-deti</h3>
+                        <p>Детский лагерь</p>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Сайт для детского лагеря на Байкале</h3>
+                    <ul class="showcase-features">
+                        <li>Информационный сайт о лагере</li>
+                        <li>Фотогалерея и программы</li>
+                        <li>Контактная информация и карта</li>
+                        <li>Адаптивный дизайн</li>
+                        <li>Система бронирования</li>
+                    </ul>
+                    <div class="showcase-stats">
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">HTML</div>
+                            <div class="showcase-stat-label">Язык</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">CSS3</div>
+                            <div class="showcase-stat-label">Стили</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">2018</div>
+                            <div class="showcase-stat-label">Год</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://github.com/DenisGoryunof/Baikal-deti" target="_blank" class="project-link primary" onclick="trackRSY('showcase_github', 'baikal_deti')">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <button class="project-link secondary" onclick="trackRSY('showcase_baikal_demo', 'baikal_deti')">
+                            <i class="fas fa-eye"></i> Архив
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CreateWsite.ru - реальный проект -->
+            <div class="showcase-item">
+                <div class="showcase-header tech">
+                    <div class="showcase-preview">
+                        <i class="fas fa-search"></i>
+                        <h3>CreateWsite.ru</h3>
+                        <p>SEO проект</p>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Проект по SEO оптимизации и созданию сайтов</h3>
+                    <ul class="showcase-features">
+                        <li>Инструменты для анализа сайтов</li>
+                        <li>Рекомендации по оптимизации</li>
+                        <li>Калькулятор стоимости сайтов</li>
+                        <li>Система управления контентом</li>
+                        <li>Интеграция с поисковыми системами</li>
+                    </ul>
+                    <div class="showcase-stats">
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">JavaScript</div>
+                            <div class="showcase-stat-label">Язык</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">SEO</div>
+                            <div class="showcase-stat-label">Фокус</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">2018</div>
+                            <div class="showcase-stat-label">Год</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://github.com/DenisGoryunof/CreateWsite.ru" target="_blank" class="project-link primary" onclick="trackRSY('showcase_github', 'createwsite')">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <button class="project-link secondary" onclick="trackRSY('showcase_seo_demo', 'createwsite')">
+                            <i class="fas fa-chart-line"></i> SEO
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tvoy-uyut - реальный проект -->
+            <div class="showcase-item">
+                <div class="showcase-header business">
+                    <div class="showcase-preview">
+                        <i class="fas fa-home"></i>
+                        <h3>Твой Уют</h3>
+                        <p>Сайт по уюту</p>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Сайт по созданию уюта в доме</h3>
+                    <ul class="showcase-features">
+                        <li>Советы по дизайну интерьера</li>
+                        <li>Каталог товаров для дома</li>
+                        <li>Интерактивные галереи</li>
+                        <li>Система рекомендаций</li>
+                        <li>Мобильная версия</li>
+                    </ul>
+                    <div class="showcase-stats">
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">—</div>
+                            <div class="showcase-stat-label">Язык</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">В разработке</div>
+                            <div class="showcase-stat-label">Статус</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-number">2025</div>
+                            <div class="showcase-stat-label">Год</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://github.com/DenisGoryunof/tvoy-uyut" target="_blank" class="project-link primary" onclick="trackRSY('showcase_github', 'tvoy_uyut')">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <button class="project-link secondary" onclick="trackRSY('showcase_uyut_demo', 'tvoy_uyut')">
+                            <i class="fas fa-hammer"></i> В разработке
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Подключаем JavaScript -->
-  <script src="js/script.js"></script>
+    <!-- Остальные секции остаются без изменений -->
+    <!-- Процесс работы -->
+    <section class="marketing-section">
+        <div class="section-header">
+            <h2 class="section-title">Как мы создадим ваш проект</h2>
+            <p class="section-subtitle">
+                Прозрачный процесс от идеи до запуска с гарантией результата
+            </p>
+        </div>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Анализ и консультация</h3>
+                <p class="step-description">
+                    Изучаю ваш бизнес, цели и конкурентов. Предлагаю оптимальные решения и стратегию развития.
+                </p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Проектирование</h3>
+                <p class="step-description">
+                    Создаю прототип и дизайн-макет. Согласовываю все детали и вношу правки.
+                </p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Разработка</h3>
+                <p class="step-description">
+                    Кодирую сайт или бота, подключаю необходимые интеграции. Ежедневно показываю прогресс.
+                </p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Тестирование</h3>
+                <p class="step-description">
+                    Проверяю работу всех функций, оптимизирую скорость. Устраняю все недочеты.
+                </p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h3 class="step-title">Запуск и поддержка</h3>
+                <p class="step-description">
+                    Запускаю проект, обучаю использованию. Обеспечиваю техническую поддержку 24/7.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты и остальные секции -->
+    <!-- Контакты с защитой -->
+    <section id="contact" class="marketing-section">
+        <div class="section-header">
+            <h2 class="section-title">Готовы начать?</h2>
+            <p class="section-subtitle">
+                Получите бесплатную консультацию и индивидуальное предложение
+            </p>
+        </div>
+
+        <div class="contact">
+            <!-- Защищённая форма без reCAPTCHA -->
+            <form class="contact-form" id="protectedForm">
+                <!-- Скрытые поля для защиты -->
+                <input type="text" class="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+                <input type="email" class="honeypot" name="email_confirm" tabindex="-1" autocomplete="off">
+                <input type="hidden" class="time-check" name="timestamp" id="timestamp">
+                <input type="hidden" class="spam-check" name="spam_check" id="spamCheck">
+                
+                <!-- Основные поля -->
+                <div class="form-group">
+                    <input type="text" class="form-input" name="name" placeholder="Ваше имя *" required maxlength="50">
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-input" name="email" placeholder="Ваш email *" required maxlength="100">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" class="form-input" name="phone" placeholder="Телефон (необязательно)" maxlength="20">
+                    <div class="error-message" id="phoneError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <select class="form-input" name="service" required>
+                        <option value="">Выберите услугу *</option>
+                        <option value="landing">Лендинг (от 49 900₽)</option>
+                        <option value="corporate">Корпоративный сайт (от 149 900₽)</option>
+                        <option value="shop">Интернет-магазин (от 299 900₽)</option>
+                        <option value="bot">Чат-бот (от 29 900₽)</option>
+                        <option value="complex">Комплексное решение</option>
+                    </select>
+                    <div class="error-message" id="serviceError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <textarea class="form-input" name="message" placeholder="Расскажите о вашем проекте или задайте вопрос *" rows="5" required maxlength="1000"></textarea>
+                    <div class="error-message" id="messageError"></div>
+                </div>
+                
+                <div class="rate-limit-info" id="rateLimitInfo"></div>
+                
+                <button type="submit" class="form-button" id="submitButton">
+                    <div class="button-loader"></div>
+                    <span class="button-text">Получить консультацию</span>
+                </button>
+                
+                <div class="form-status" id="formStatus"></div>
+            </form>
+
+            <!-- Контактная информация -->
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                    <div>
+                        <i class="fas fa-phone" style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                        <div style="color: var(--text-secondary);">Телефон</div>
+                        <a href="tel:+79883390517" style="color: var(--text-primary); text-decoration: none;">+7 (988) 339-05-17</a>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope" style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                        <div style="color: var(--text-secondary);">Email</div>
+                        <a href="mailto:sawerGor@gmail.com" style="color: var(--text-primary); text-decoration: none;">sawerGor@gmail.com</a>
+                    </div>
+                    <div>
+                        <i class="fab fa-telegram" style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                        <div style="color: var(--text-secondary);">Telegram</div>
+                        <a href="https://dengorru" style="color: var(--text-primary); text-decoration: none;">@denisgoryunof</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Реальные проекты</h3>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/DenisGoryunof/Ego" target="_blank">Салон Эго (TypeScript)</a></li>
+                    <li><a href="https://github.com/DenisGoryunof/DenGor.ru" target="_blank">DenGor.ru (JavaScript)</a></li>
+                    <li><a href="https://github.com/DenisGoryunof/ego-chat_bot" target="_blank">Ego Chat Bot (Python)</a></li>
+                    <li><a href="https://github.com/DenisGoryunof/portfolio" target="_blank">Portfolio v2 (TypeScript)</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Технологии</h3>
+                <ul class="footer-links">
+                    <li><a href="#showcase">TypeScript</a></li>
+                    <li><a href="#showcase">React</a></li>
+                    <li><a href="#showcase">Python</a></li>
+                    <li><a href="#showcase">JavaScript</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:+79883390517">+7 (988) 339-05-17</a></li>
+                    <li><a href="mailto:sawerGor@gmail.com">sawerGor@gmail.com</a></li>
+                    <li><a href="https://dengorru">Telegram</a></li>
+                    <li><a href="#contact">Обратная связь</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://github.com/DenisGoryunof" target="_blank" onclick="trackRSY('social_github')">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://dengorru" target="_blank" onclick="trackRSY('social_telegram')">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="mailto:sawerGor@gmail.com" onclick="trackRSY('social_email')">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>GitHub</h3>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/DenisGoryunof" target="_blank">Профиль GitHub</a></li>
+                    <li><a href="https://github.com/DenisGoryunof?tab=repositories" target="_blank">Все репозитории</a></li>
+                    <li><a href="#contact">Обратная связь</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Денис Горюнов. Все права защищены.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                Все проекты реальные и доступны на GitHub. Сайт соответствует требованиям РСЯ.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Подключение JavaScript файлов -->
+    <script src="js/main.js"></script>
+    <script src="js/marketing.js"></script>
+    <script src="js/protection.js"></script>
+    <script src="js/rsy-tracking.js"></script>
 </body>
 </html>
