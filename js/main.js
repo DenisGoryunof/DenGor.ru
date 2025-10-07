@@ -187,17 +187,9 @@ document.getElementById('protectedForm').addEventListener('submit', async functi
         // Отправка в Telegram (безопасная)
         const telegramResult = await sendToTelegram(data);
         
-        if (telegramResult.success) {
-            showSuccess('Сообщение успешно отправлено! Я свяжусь с вами в течение 15 минут.');
-            trackRSY('form_submission_success', {
-                service: data.service,
-                has_phone: !!data.phone
-            });
-            this.reset();
-        } else {
-            showError('Произошла ошибка при отправке. Пожалуйста, попробуйте ещё раз.');
-            trackRSY('form_telegram_error');
-        }
+       const res = await fetch(botUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({...}) });
+const json = await res.json();
+if (!json.ok) throw new Error(json.description || 'Telegram error');
 
     } catch (error) {
         showError('Произошла ошибка при отправке. Пожалуйста, попробуйте ещё раз.');
