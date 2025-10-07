@@ -61,10 +61,23 @@ const ValidationUtils = {
     return found.length ? [`Обнаружены запрещённые слова: ${found.join(', ')}`] : [];
   },
 };
-
-
 // ---------- /ValidationUtils ----------
 
+function showError(msg) {
+  const fs = document.getElementById('formStatus');
+  fs.textContent = msg;
+  fs.className = 'form-status error';
+  fs.style.display = 'block';
+  if (typeof trackRSY === 'function') trackRSY('form_client_error', { message: msg });
+}
+
+function showSuccess(msg) {
+  const fs = document.getElementById('formStatus');
+  fs.textContent = msg;
+  fs.className = 'form-status success';
+  fs.style.display = 'block';
+  if (typeof trackRSY === 'function') trackRSY('form_submission_success');
+}
 // Теперь безопасно вешаем обработчик
 document.getElementById('protectedForm').addEventListener('submit', async function (e) {
   e.preventDefault();
