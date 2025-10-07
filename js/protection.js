@@ -17,8 +17,7 @@ async function sendToTelegram(formData) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                chat_id: TELEGRAM_CONFIG.botChatId,
+            body: JSON.stringify({chat_id: TELEGRAM_CONFIG.botChatId,
                 text: botMessage,
                 parse_mode: 'HTML'
             })
