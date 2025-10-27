@@ -40,7 +40,9 @@
     <!-- /Yandex.Metrika counter -->
 
     <!-- РСЯ Рекламный код -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Yandex.RTB -->
+	<script>window.yaContextCb=window.yaContextCb||[]</script>
+	<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body>
     <!-- Навигация -->
@@ -57,13 +59,17 @@
         </div>
     </nav>
 	
-	<!-- РСЯ: Верхний рекламный блок -->
-	<div class="yandex-ad-container">
-		<div class="ad-label-rsy">Реклама</div>
-		<!-- Yandex.RTB R-A-11815532-1 -->
-		<div id="yandex_rtb_R-A-11815532-1"></div>
-		<script src="js/rsy-tracking.js"></script>
-	</div>
+	<!-- Yandex.RTB R-A-11815532-1 -->
+	<div id="yandex_rtb_R-A-11815532-1"></div>
+	<script>
+	window.yaContextCb.push(() => {
+		Ya.Context.AdvManager.render({
+			"blockId": "R-A-11815532-1",
+			"renderTo": "yandex_rtb_R-A-11815532-1",
+			"type": "feed"
+		})
+	})
+	</script>
 
     <!-- Hero секция с маркетингом -->
     <section id="home" class="hero">
