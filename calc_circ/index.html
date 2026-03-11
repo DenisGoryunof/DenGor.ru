@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Калькулятор окружности</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+        .calculator {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: #1e293b;
+            text-align: center;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #475569;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .point-group {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        .point-title {
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .coord-row {
+            display: flex;
+            gap: 12px;
+        }
+        .coord-field {
+            flex: 1;
+        }
+        .coord-field label {
+            display: block;
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+        .coord-field input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 16px;
+            background: white;
+            transition: 0.2s;
+        }
+        .coord-field input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+        }
+        button {
+            width: 100%;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 16px 0 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        .result {
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 20px;
+            color: white;
+        }
+        .result-title {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .result-value {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+        .result-value.small {
+            font-size: 18px;
+            font-weight: 400;
+            color: #cbd5e1;
+        }
+        .error {
+            background: #fee2e2;
+            color: #b91c1c;
+            border-radius: 16px;
+            padding: 16px;
+            margin-top: 16px;
+            font-weight: 500;
+        }
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>⭕ Калькулятор окружности</h1>
+        <div class="subtitle">Введите координаты трёх точек</div>
+
+        <!-- Точка 1 -->
+        <div class="point-group">
+            <div class="point-title">Точка 1</div>
+            <div class="coord-row">
+                <div class="coord-field">
+                    <label>X₁</label>
+                    <input type="number" id="x1" step="any" value="0" placeholder="0">
+                </div>
+                <div class="coord-field">
+                    <label>Y₁</label>
+                    <input type="number" id="y1" step="any" value="0" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <!-- Точка 2 -->
+        <div class="point-group">
+            <div class="point-title">Точка 2</div>
+            <div class="coord-row">
+                <div class="coord-field">
+                    <label>X₂</label>
+                    <input type="number" id="x2" step="any" value="4" placeholder="4">
+                </div>
+                <div class="coord-field">
+                    <label>Y₂</label>
+                    <input type="number" id="y2" step="any" value="0" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <!-- Точка 3 -->
+        <div class="point-group">
+            <div class="point-title">Точка 3</div>
+            <div class="coord-row">
+                <div class="coord-field">
+                    <label>X₃</label>
+                    <input type="number" id="x3" step="any" value="0" placeholder="0">
+                </div>
+                <div class="coord-field">
+                    <label>Y₃</label>
+                    <input type="number" id="y3" step="any" value="3" placeholder="3">
+                </div>
+            </div>
+        </div>
+
+        <button id="calcBtn">Рассчитать</button>
+
+        <!-- Блок результата -->
+        <div class="result" id="resultBox">
+            <div class="result-title">Центр окружности</div>
+            <div class="result-value" id="centerDisplay">(X, Y)</div>
+            <div class="result-title" style="margin-top: 12px;">Радиус</div>
+            <div class="result-value" id="radiusDisplay">R</div>
+        </div>
+
+        <footer>Введите любые три точки</footer>
+    </div>
+
+    <script>
+        (function() {
+            const x1 = document.getElementById('x1');
+            const y1 = document.getElementById('y1');
+            const x2 = document.getElementById('x2');
+            const y2 = document.getElementById('y2');
+            const x3 = document.getElementById('x3');
+            const y3 = document.getElementById('y3');
+            const btn = document.getElementById('calcBtn');
+            const centerDisplay = document.getElementById('centerDisplay');
+            const radiusDisplay = document.getElementById('radiusDisplay');
+
+            function formatNumber(num) {
+                // Если число целое – не показываем .0
+                if (Number.isInteger(num)) return num.toString();
+                // Округляем до 3 знаков, убираем лишние нули
+                return num.toFixed(3).replace(/\.?0+$/, '');
+            }
+
+            function calculate() {
+                // Считываем значения как числа с плавающей точкой
+                const p1x = parseFloat(x1.value);
+                const p1y = parseFloat(y1.value);
+                const p2x = parseFloat(x2.value);
+                const p2y = parseFloat(y2.value);
+                const p3x = parseFloat(x3.value);
+                const p3y = parseFloat(y3.value);
+
+                // Проверка на валидность
+                if (isNaN(p1x) || isNaN(p1y) || isNaN(p2x) || isNaN(p2y) || isNaN(p3x) || isNaN(p3y)) {
+                    centerDisplay.innerText = 'Ошибка ввода';
+                    radiusDisplay.innerText = 'Заполните все поля числами';
+                    return;
+                }
+
+                // Вычисление определителя (площади) для проверки коллинеарности
+                const area = p1x * (p2y - p3y) + p2x * (p3y - p1y) + p3x * (p1y - p2y);
+                if (Math.abs(area) < 1e-10) {
+                    centerDisplay.innerText = 'Точки на одной прямой';
+                    radiusDisplay.innerText = 'Окружность не существует';
+                    return;
+                }
+
+                // Расчёт центра и радиуса
+                const A = p1x * (p2y - p3y) - p1y * (p2x - p3x) + p2x * p3y - p3x * p2y;
+                const B = (p1x * p1x + p1y * p1y) * (p3y - p2y) +
+                          (p2x * p2x + p2y * p2y) * (p1y - p3y) +
+                          (p3x * p3x + p3y * p3y) * (p2y - p1y);
+                const C = (p1x * p1x + p1y * p1y) * (p2x - p3x) +
+                          (p2x * p2x + p2y * p2y) * (p3x - p1x) +
+                          (p3x * p3x + p3y * p3y) * (p1x - p2x);
+
+                const cx = -B / (2 * A);
+                const cy = -C / (2 * A);
+                const radius = Math.hypot(cx - p1x, cy - p1y);
+
+                // Форматированный вывод
+                centerDisplay.innerText = `(${formatNumber(cx)} ; ${formatNumber(cy)})`;
+                radiusDisplay.innerText = formatNumber(radius);
+            }
+
+            btn.addEventListener('click', calculate);
+
+            // Небольшая демонстрация при загрузке
+            window.addEventListener('load', () => {
+                // Устанавливаем пример по умолчанию
+                x1.value = '0';
+                y1.value = '0';
+                x2.value = '4';
+                y2.value = '0';
+                x3.value = '0';
+                y3.value = '3';
+                calculate(); // сразу покажем результат для примера
+            });
+        })();
+    </script>
+</body>
+</html>
