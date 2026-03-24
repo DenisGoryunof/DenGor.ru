@@ -1,8 +1,11 @@
 import os
 import asyncio
 from datetime import datetime, timedelta
-from bot import BOT_TOKEN, ADMIN_ID, GROUP_ID, load_data, get_user, is_subscription_active
+from utils import load_data
 from aiogram import Bot
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 async def send_reminders():
     bot = Bot(token=BOT_TOKEN)
@@ -17,7 +20,6 @@ async def send_reminders():
             continue
         end_str = info.get("subscription_end")
         if not end_str or end_str == "1970-01-01":
-            # подписки нет – напоминать каждый день
             text = "❗ У вас нет активной подписки. Пожалуйста, оплатите, нажав /pay в группе."
             await bot.send_message(uid, text)
             continue
